@@ -5,23 +5,91 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.testedt.app",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "location",
+          "fetch",
+          "remote-notification"
+        ],
+        "NSLocationWhenInUseUsageDescription": "This app requires access to your location when open.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app requires access to your location even when closed.",
+        "NSLocationAlwaysUsageDescription":  "This app requires access to your location when open.",
+        "deploymentTarget": "14"
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyCpjbKVmcR7jB5G3QxxVOeU-SyvNv1QhFQ"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.testedt.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCpjbKVmcR7jB5G3QxxVOeU-SyvNv1QhFQ"
+        }
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b373427f-4b1f-4879-96c1-53e182274be5"
+      }
+    },
+    "plugins": [
+      // [
+      //   "expo-build-properties",
+      //   {
+      //     "android": {
+      //       "compileSdkVersion": 33,
+      //       "targetSdkVersion": 33,
+      //       "buildToolsVersion": "33.0.0"
+      //     },
+      //     "ios": {
+      //       "deploymentTarget": "14.0"
+      //     }
+      //   }
+      // ],
+      [
+        "expo-task-manager",
+        {
+          "ios": {
+            "minimumOSVersion": "14"
+          }
+        }
+      ],
+      // [
+      //   "expo-background-fetch",
+      //   {
+      //     "ios": {
+      //       "minimumOSVersion": "14"
+      //     }
+      //   }
+      // ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location.",
+          "locationAlwaysPermission": "Allow $(PRODUCT_NAME) to use your location.",
+          "locationWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location.",
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ]
+    ],
+    "owner": "efrenhhi"
   }
 }
