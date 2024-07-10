@@ -19,7 +19,6 @@ const LoadingScreen: React.FC<Props> = (props) => {
           AsyncStorage.setItem('position', JSON.stringify(position))
         })
       }
-      console.log('token', token)
       props.navigation.replace(token ? 'App' : 'Auth');
     };
     _bootstrapAsync()

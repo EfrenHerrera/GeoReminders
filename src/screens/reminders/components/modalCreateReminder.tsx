@@ -104,7 +104,6 @@ const CreateReminder: React.FC<Props> = (props) => {
     };
 
     const onSubmit = async (data: Reminder) => {
-        console.log(data)
         data.username_id = await AsyncStorage.getItem('user');
         if(reminder !== null) {
             data.id = reminder.id;
